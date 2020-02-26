@@ -5,7 +5,7 @@ This page describes the broad concept behind the program. [See the wiki](https:/
 ## Table of Contents
 * [Program Overview](#Program-Overview)
 
-## [Program Overview](#program-overview)
+## Program Overview
 ![Block diagram for general negative feedback system](https://www.tutorialspoint.com/control_systems/images/positive_feedback.jpg)
 
 The program functions as a basic feedback loop. The process can be generalized as: take in a value, compare that value to predetermined thresholds, and then decide on an action based on that comparison. Thus, although the program is written for RPP control, it can be applied to any metric that can benefit from a feedback loop (e.x. heartrate, pharmacokinetics, etc)
