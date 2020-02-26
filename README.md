@@ -1,10 +1,11 @@
 ## Table of Contents
 * [Program Overview](#Program-Overview)
+* [Instructions](#Instructions)
 * [Documentation](#Documentation)
     * [Input Components](#Input-Components)
     * [Logic/Decision Components](#Logic/Decision-Components)
     * [Output Components](#Output-Components)
-* [Relevant CS Concepts](#Relevant-CS-Concepts)
+* [Troubleshooting/Debugging: Relevant Concepts](#Troubleshooting/Debugging:-Relevant-Concepts)
 
 # Program Overview
 ![Block diagram for general negative feedback system](https://www.tutorialspoint.com/control_systems/images/positive_feedback.jpg)
@@ -30,6 +31,10 @@ Our 3 components:
 ![specific components](https://github.com/pl9ed/RPP-Control/blob/master/rppcomponents.png?raw=true)
 
 If we wanted to use the program to control heartrate, for example, we would only need to change the output component to match whatever we're using to increase or decrease heart rate. The numerical values for the other components (input and thresholds, for example) might change, but the program itself would not.
+
+# Instructions
+
+Placeholder
 
 # Documentation
 This section describes the function, inputs, and outputs for each subVI in the program.
@@ -73,7 +78,9 @@ system_logic: decides infuse/withdraw/no action
 ## Output Components
 placeholder
 
-# Relevant CS Concepts
+# Troubleshooting/Debugging: Relevant Concepts
+These concepts will hopefully point you in the right direction when something goes wrong, or if changes need to be made. 
+
 ### Data Types
 **integer**: int, straightforward numerical integer values 
 
