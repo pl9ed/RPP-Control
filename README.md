@@ -3,7 +3,7 @@
 * [Instructions](#Instructions)
 * [Documentation](#Documentation)
     * [Input Components](#Input-Components)
-    * [Logic/Decision Components](#Logic/Decision-Components)
+    * [Logic/Decision Components](#LogicDecision-Components)
     * [Output Components](#Output-Components)
 * [Troubleshooting/Debugging: Relevant Concepts](#troubleshootingdebugging-relevant-concepts)
 
