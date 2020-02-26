@@ -5,7 +5,7 @@
     * [Input Components](#Input-Components)
     * [Logic/Decision Components](#Logic/Decision-Components)
     * [Output Components](#Output-Components)
-* [Troubleshooting/Debugging: Relevant Concepts](#Troubleshooting/Debugging:-Relevant-Concepts)
+* [Troubleshooting/Debugging: Relevant Concepts](#troubleshootingdebugging-relevant-concepts)
 
 # Program Overview
 ![Block diagram for general negative feedback system](https://www.tutorialspoint.com/control_systems/images/positive_feedback.jpg)
