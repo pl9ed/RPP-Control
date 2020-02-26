@@ -2,14 +2,14 @@
 
 This page describes the broad concept behind the program. [See the wiki](https://github.com/pl9ed/RPP-Control/wiki) for detailed documentation for each component and subVI.
 
-## Table of Contents
+# Table of Contents
 * [Program Overview](#Program-Overview)
 * [Documentation](#Documentation)
     * [Input Components](#Input-Components)
     * [Logic/Decision Components](#Logic/Decision-Components)
     * [Output Components](#Output-Components)
 
-## Program Overview
+# Program Overview
 ![Block diagram for general negative feedback system](https://www.tutorialspoint.com/control_systems/images/positive_feedback.jpg)
 
 The program functions as a basic feedback loop. The process can be generalized as: take in a value, compare that value to predetermined thresholds, and then decide on an action based on that comparison. Thus, although the program is written for RPP control, it can be applied to any metric that can benefit from a feedback loop (e.x. heartrate, pharmacokinetics, etc)
@@ -34,24 +34,24 @@ Our 3 components:
 
 If we wanted to use the program to control heartrate, for example, we would only need to change the output component to match whatever we're using to increase or decrease heart rate. The numerical values for the other components (input and thresholds, for example) might change, but the program itself would not.
 
-## Documentation
+# Documentation
 
-#### Input Components
+## Input Components
 importExcel: read data from Excel file
 
 importExcel_DDE: read data from Excel file
 
 importValue: read data from delimited data (txt,csv,tsv,etc)
 
-#### Logic/Decision Components
+## Logic/Decision Components
 group_data: bundles data corresponding to each sample (i.e. COM port, RPP value, pump output, etc associated with each specific rat is grouped together) 
 
 system_logic: decides infuse/withdraw/no action
 
-#### Output Components
+## Output Components
 placeholder
 
-#### Other Components
+## Other Components
 front_panel: overall main program responsible for connecting components together and interfacing with the user
 
 spoof_data: periodically generates random numeric values, for testing
