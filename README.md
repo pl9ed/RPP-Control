@@ -8,6 +8,7 @@ This page describes the broad concept behind the program. [See the wiki](https:/
     * [Input Components](#Input-Components)
     * [Logic/Decision Components](#Logic/Decision-Components)
     * [Output Components](#Output-Components)
+* [Relevant CS Concepts](#Relevant-CS-Concepts)
 
 # Program Overview
 ![Block diagram for general negative feedback system](https://www.tutorialspoint.com/control_systems/images/positive_feedback.jpg)
@@ -35,6 +36,16 @@ Our 3 components:
 If we wanted to use the program to control heartrate, for example, we would only need to change the output component to match whatever we're using to increase or decrease heart rate. The numerical values for the other components (input and thresholds, for example) might change, but the program itself would not.
 
 # Documentation
+This section describes the function, inputs, and outputs for each subVI in the program.
+
+### front_panel
+overall main program responsible for connecting components together and interfacing with the user
+
+### spoof_data
+periodically generates random numeric values, for testing
+
+### spoofExcel
+periodically writes random numeric values to an Excel file, for testing
 
 ## Input Components
 ### importExcel
@@ -66,18 +77,19 @@ system_logic: decides infuse/withdraw/no action
 ## Output Components
 placeholder
 
-## Other Components
-front_panel: overall main program responsible for connecting components together and interfacing with the user
+# Relevant CS Concepts
+### Data Types
+**integer**: int, straightforward numerical integer values 
 
-spoof_data: periodically generates random numeric values, for testing
+e.x. 1, 0, 32
 
-spoofExcel: periodically writes random numeric values to an Excel file, for testing
+**float and double**: flt/dbl, floating point precision numerical values ([see Wikipedia for details](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)), for our purposes we can think of these as numbers with decimals 
 
-### Links to relevant sections in the wiki
-[Wiki Home and Index](https://github.com/pl9ed/RPP-Control/wiki)
+e.x. 23.50, 3.14159, 1.00
 
-[Input Components](https://github.com/pl9ed/RPP-Control/wiki/1.-Input-Components)
+**string**: str, essentially text, you can also have numbers and special characters, but note that a string number is NOT the same as numerical data type (i.e. the string "123" is not the same as the int or dbl 123)
 
-[Logic/Decision Components](https://github.com/pl9ed/RPP-Control/wiki/2.-Logic-and-Decision-Components)
+e.x. abc, John Smith, 123!@#
 
-[Output Components](https://github.com/pl9ed/RPP-Control/wiki/3.-Output-Components)
+### Links to helpful resources
+[Basic Data Types](https://www.cs.uic.edu/~jbell/CourseNotes/ProgrammingConcepts/DataTypes.html)
