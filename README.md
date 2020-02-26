@@ -22,7 +22,7 @@ In the specific case, RPP measurement is used to determine whether or not to inf
 Our 3 components:
 * Get RPP value from telemetric transmitter (in this case, via Excel spreadsheet)
 * Infuse if RPP is too high, withdraw if too low, no action otherwise
-* Write the appropriate commands to control the syringe pump in order to 
+* Write the appropriate commands to control the syringe pump in order to bring about the desired effect
 
 ![specific components](https://github.com/pl9ed/RPP-Control/blob/master/rppcomponents.png?raw=true)
 
