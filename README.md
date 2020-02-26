@@ -82,23 +82,23 @@ placeholder
 These concepts will hopefully point you in the right direction when something goes wrong, or if changes need to be made. 
 
 ### Data Types
-**integer**
+**integer** (int)
 
-int, straightforward numerical integer values 
+Numerical integer values. Pretty straightforward. In LabVIEW, these are blue.
 
-e.x. 1, 0, 32
+Examples: 1, 0, 32
 
-**float and double**f
+**float and double** (flt/dbl)
 
-lt/dbl, floating point precision numerical values ([see Wikipedia for details](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)), for our purposes we can think of these as numbers with decimals 
+([Floating point precision numerical values.](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)). For our purposes we can think of these as numbers with decimals, or real numbers. In LabVIEW, these are orange.
 
-e.x. 23.50, 3.14159, 1.00
+Examples: 23.50, 3.14159, 1.00
 
-**string**
+**string** (str)
 
-str, essentially text, you can also have numbers and special characters, but note that a string number is NOT the same as numerical data type (i.e. the string "123" is not the same as the int or dbl 123). [LabVIEW uses ASCII encoding.](https://en.wikipedia.org/wiki/ASCII) Thus, if you try to do arithmetic on strings, you'll often get nonsensical results. For example, for ASCII strings: 1 + 1 = b
+Essentially text, or a string of characters. [LabVIEW uses ASCII encoding for strings.](https://en.wikipedia.org/wiki/ASCII) You can also have numbers and special characters, but note that the string '123' is not the same as the number 123 due to the way the different types are represented in the computer. Thus, if you try to do arithmetic directly on strings, you'll often get nonsensical results (e.x. 1+1=b). In LabVIEW, these are pink.
 
-e.x. abc, John Smith, 123!@#
+Examples: abc, John Smith, 123!@#
 
 ### Links to helpful resources
 [Basic Data Types](https://www.cs.uic.edu/~jbell/CourseNotes/ProgrammingConcepts/DataTypes.html)
