@@ -82,15 +82,21 @@ placeholder
 These concepts will hopefully point you in the right direction when something goes wrong, or if changes need to be made. 
 
 ### Data Types
-**integer**: int, straightforward numerical integer values 
+**integer**
+
+int, straightforward numerical integer values 
 
 e.x. 1, 0, 32
 
-**float and double**: flt/dbl, floating point precision numerical values ([see Wikipedia for details](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)), for our purposes we can think of these as numbers with decimals 
+**float and double**f
+
+lt/dbl, floating point precision numerical values ([see Wikipedia for details](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)), for our purposes we can think of these as numbers with decimals 
 
 e.x. 23.50, 3.14159, 1.00
 
-**string**: str, essentially text, you can also have numbers and special characters, but note that a string number is NOT the same as numerical data type (i.e. the string "123" is not the same as the int or dbl 123)
+**string**
+
+str, essentially text, you can also have numbers and special characters, but note that a string number is NOT the same as numerical data type (i.e. the string "123" is not the same as the int or dbl 123). [LabVIEW uses ASCII encoding.](https://en.wikipedia.org/wiki/ASCII) Thus, if you try to do arithmetic on strings, you'll often get nonsensical results. For example, for ASCII strings: 1 + 1 = b
 
 e.x. abc, John Smith, 123!@#
 
