@@ -37,11 +37,26 @@ If we wanted to use the program to control heartrate, for example, we would only
 # Documentation
 
 ## Input Components
-importExcel: read data from Excel file
+### importExcel
+**INPUTS**: filepath (path), data range (string)
 
-importExcel_DDE: read data from Excel file
+**OUTPUTS**: numerical data from the specified data range (double array)
 
-importValue: read data from delimited data (txt,csv,tsv,etc)
+Reads in Excel data using ActiveX methods. The data from Excel is imported as a string and then converted into double using "Fract/Exp String to Number". As a result, any non-numeric data within this range will also be converted into its double value.
+
+### importExcel_DDE
+**INPUTS**: filename (string), row (int), column (int)
+
+**OUTPUTS**: data at specific cell (double)
+
+Reads in data from Excel spreadsheet named *filename* at cell (*row*,*column*) using OpenDDE. The file must be open in Excel prior to running the program. The data from Excel is imported as a string and then converted into double using "Fract/Exp String to Number". As a result, any non-numeric data within this range will also be converted into its double value.
+
+### importValue
+**INPUTS**: filepath (path)
+
+**OUTPUTS**: data (double array)
+
+Simple VI that reads in delimited data from *filepath* and outputs data in a double array. Uses LabVIEW "Read Delimited Spreadsheet." Delimiter can be changed. Type of file does not matter, but will typically be txt, csv, or tsv.
 
 ## Logic/Decision Components
 group_data: bundles data corresponding to each sample (i.e. COM port, RPP value, pump output, etc associated with each specific rat is grouped together) 
