@@ -31,8 +31,8 @@ If we wanted to use the program to control heartrate, for example, we would only
 ### Links to relevant sections in the wiki
 [Wiki Home and Index](https://github.com/pl9ed/RPP-Control/wiki)
 
-[Input Components](https://github.com/pl9ed/RPP-Control/wiki/Input-Components)
+[Input Components](https://github.com/pl9ed/RPP-Control/wiki/1.-Input-Components)
 
-[Logic/Decision Components](https://github.com/pl9ed/RPP-Control/wiki/Logic-and-Decision-Components)
+[Logic/Decision Components](https://github.com/pl9ed/RPP-Control/wiki/2.-Logic-and-Decision-Components)
 
-[Output Components](https://github.com/pl9ed/RPP-Control/wiki/Output-Components)
+[Output Components](https://github.com/pl9ed/RPP-Control/wiki/3.-Output-Components)
