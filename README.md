@@ -1,8 +1,4 @@
-# RPP-Control
-
-This page describes the broad concept behind the program. [See the wiki](https://github.com/pl9ed/RPP-Control/wiki) for detailed documentation for each component and subVI.
-
-# Table of Contents
+## Table of Contents
 * [Program Overview](#Program-Overview)
 * [Documentation](#Documentation)
     * [Input Components](#Input-Components)
