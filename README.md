@@ -5,7 +5,9 @@ This page describes the broad concept behind the program. [See the wiki](https:/
 ## Table of Contents
 * [Program Overview](#Program-Overview)
 * [Documentation](#Documentation)
-    * [Input Components[(#Input-Components)
+    * [Input Components](#Input-Components)
+    * [Logic/Decision Components](#Logic/Decision-Components)
+    * [Output Components](#Output-Components)
 
 ## Program Overview
 ![Block diagram for general negative feedback system](https://www.tutorialspoint.com/control_systems/images/positive_feedback.jpg)
