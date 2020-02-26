@@ -90,7 +90,7 @@ Examples: 1, 0, 32
 
 **float and double** (flt/dbl)
 
-([Floating point precision numerical values.](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)). For our purposes we can think of these as numbers with decimals, or real numbers. In LabVIEW, these are orange.
+[Floating point precision numerical values.](https://en.wikipedia.org/wiki/Single-precision_floating-point_format) For our purposes we can think of these as numbers with decimals, or real numbers. In LabVIEW, these are orange.
 
 Examples: 23.50, 3.14159, 1.00
 
