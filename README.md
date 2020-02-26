@@ -15,9 +15,7 @@ The program therefore has 3 basic components:
 
 ![general components](https://github.com/pl9ed/RPP-Control/blob/master/generalcomponents.png?raw=true)
 
-
-
-## Specific case: RPP Control
+### Specific case: RPP Control
 ![Block diagram for specific RPP implementation](https://github.com/pl9ed/RPP-Control/blob/master/feedback_simple.png)
 
 In the specific case, RPP measurement is used to determine whether or not to inflate an aortic occluder using a syringe pump.
@@ -27,3 +25,14 @@ Our 3 components:
 * Write the appropriate commands to control the syringe pump in order to 
 
 ![specific components](https://github.com/pl9ed/RPP-Control/blob/master/rppcomponents.png?raw=true)
+
+If we wanted to use the program to control heartrate, for example, we would only need to change the output component to match whatever we're using to increase or decrease heart rate. The numerical values for the other components (input and thresholds, for example) might change, but the program itself would not.
+
+### Links to relevant sections in the wiki
+[Wiki Home and Index](https://github.com/pl9ed/RPP-Control/wiki)
+
+[Input Components](https://github.com/pl9ed/RPP-Control/wiki/Input-Component)
+
+[Logic/Decision Components](https://github.com/pl9ed/RPP-Control/wiki/Logic-and-Decision-Components)
+
+[Output Components](https://github.com/pl9ed/RPP-Control/wiki/Output-Components)
