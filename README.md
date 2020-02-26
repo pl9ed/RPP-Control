@@ -4,6 +4,8 @@ This page describes the broad concept behind the program. [See the wiki](https:/
 
 ## Table of Contents
 * [Program Overview](#Program-Overview)
+* [Documentation](#Documentation)
+    * [Input Components[(#Input-Components)
 
 ## Program Overview
 ![Block diagram for general negative feedback system](https://www.tutorialspoint.com/control_systems/images/positive_feedback.jpg)
@@ -30,14 +32,7 @@ Our 3 components:
 
 If we wanted to use the program to control heartrate, for example, we would only need to change the output component to match whatever we're using to increase or decrease heart rate. The numerical values for the other components (input and thresholds, for example) might change, but the program itself would not.
 
-### Links to relevant sections in the wiki
-[Wiki Home and Index](https://github.com/pl9ed/RPP-Control/wiki)
-
-[Input Components](https://github.com/pl9ed/RPP-Control/wiki/1.-Input-Components)
-
-[Logic/Decision Components](https://github.com/pl9ed/RPP-Control/wiki/2.-Logic-and-Decision-Components)
-
-[Output Components](https://github.com/pl9ed/RPP-Control/wiki/3.-Output-Components)
+## Documentation
 
 #### Input Components
 importExcel: read data from Excel file
@@ -60,3 +55,12 @@ front_panel: overall main program responsible for connecting components together
 spoof_data: periodically generates random numeric values, for testing
 
 spoofExcel: periodically writes random numeric values to an Excel file, for testing
+
+### Links to relevant sections in the wiki
+[Wiki Home and Index](https://github.com/pl9ed/RPP-Control/wiki)
+
+[Input Components](https://github.com/pl9ed/RPP-Control/wiki/1.-Input-Components)
+
+[Logic/Decision Components](https://github.com/pl9ed/RPP-Control/wiki/2.-Logic-and-Decision-Components)
+
+[Output Components](https://github.com/pl9ed/RPP-Control/wiki/3.-Output-Components)
