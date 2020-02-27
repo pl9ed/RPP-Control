@@ -11,6 +11,8 @@
         2. [importExcel_DDE](#importExcel_DDE)
         3. [importValue](#importValue)
     * [Logic/Decision Components](#LogicDecision-Components)
+        1. [group_data](#group_data)
+        2. [system_logic](#system_logic)
     * [Output Components](#Output-Components)
 * [Glossary](#Glossary)
 
