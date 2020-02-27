@@ -56,7 +56,7 @@ Overall main program responsible for connecting components together and interfac
 
 **OUTPUTS**: Array (dbl array)
 
-Randomly generates (*No. Pumps*) numbers between 0 and 200 as output. Used primarily for testing.
+Randomly generates *No. Pumps* numbers between 0 and 200 as output. Used primarily for testing.
 
 ### spoofExcel
 Standalone program that periodically writes random values into an Excel spreadsheet. Can use either the Report Generation Toolkit or write to a delimited spreadsheet and forces an Excel file extension. Used primarily for testing.
@@ -84,9 +84,19 @@ Reads in data from Excel spreadsheet named *filename* at a specific cell at (*ro
 Simple VI that reads in delimited data from *filepath* and outputs data in a double array. Uses LabVIEW "Read Delimited Spreadsheet." Delimiter can be changed. Type of file does not matter, but will typically be txt, csv, or tsv.
 
 ## Logic/Decision Components
-group_data: bundles data corresponding to each sample (i.e. COM port, RPP value, pump output, etc associated with each specific rat is grouped together) 
+### group_data ###
+**INPUTS**: VISA Resource Names (VISA name array), Input Values (dbl array)
 
-system_logic: decides infuse/withdraw/no action
+**OUTPUTS**: Grouped Data (cluster of arrays)
+
+Groups the input values with their corresponding VISA array. The grouping is done based on the index at *VISA Resource Names* and *Input Values*, so we need to make sure that the VISA Resources and Excel spreadsheet input range are set in the correct order. Otherwise, the pump won't be infusing/withdrawing for the correct mouse.
+
+### system_logic ###
+**INPUTS**: Value (dbl), Upper Threshold (dbl), Lower Threshold (dbl)
+
+**OUTPUTS**: Action (int)
+
+Decides on a course of action based on numerical comparisons of *Value*, *Upper Threshold*, and *Lower Threshold*. Outputs an integer *Action* corresponding to the decision. 0: Infuse 1: Withdraw 2: No action 3: Error. *Action* values for infuse and withdraw (0/1) correspond to the ones used by NX drivers.
 
 ## Output Components
 placeholder
