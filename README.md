@@ -2,13 +2,19 @@
 * [Program Overview](#Program-Overview)
 * [Instructions](#Instructions)
 * [Documentation](#Documentation)
+    * [General Components](#genera-components)
+        1. [front_panel](#front_panel)
+        2. [spoof_data](#spoof_data)
+        3. [spoofExcel](#spoofExcel)
     * [Input Components](#Input-Components)
         1. [importExcel](#importExcel)
         2. [importExcel_DDE](#importExcel_DDE)
         3. [importValue](#importValue)
     * [Logic/Decision Components](#LogicDecision-Components)
     * [Output Components](#Output-Components)
-* [Troubleshooting/Debugging: Relevant Concepts](#troubleshootingdebugging-relevant-concepts)
+* [Glossary](#Glossary)
+
+Contact pl9ed@virginia.edu for information
 
 # Program Overview
 ![Block diagram for general negative feedback system](https://www.tutorialspoint.com/control_systems/images/positive_feedback.jpg)
@@ -41,35 +47,39 @@ Placeholder
 
 # Documentation
 This section describes the function, inputs, and outputs for each subVI in the program.
-
+## General Components
 ### front_panel
-overall main program responsible for connecting components together and interfacing with the user
+Overall main program responsible for connecting components together and interfacing with the user. Block diagram connects sub-components.
 
 ### spoof_data
-periodically generates random numeric values, for testing
+**INPUTS**: No. Pumps (int)
+
+**OUTPUTS**: Array (dbl array)
+
+Randomly generates (*No. Pumps*) numbers between 0 and 200 as output. Used primarily for testing.
 
 ### spoofExcel
-periodically writes random numeric values to an Excel file, for testing
+Standalone program that periodically writes random values into an Excel spreadsheet. Can use either the Report Generation Toolkit or write to a delimited spreadsheet and forces an Excel file extension. Used primarily for testing.
 
 ## Input Components
 ### importExcel
-**INPUTS**: filepath (path), data range (string)
+**INPUTS**: Path (path), RANGE (str)
 
-**OUTPUTS**: numerical data from the specified data range (double array)
+**OUTPUTS**: Excel Data (dbl array)
 
-Reads in Excel data using ActiveX methods. The data from Excel is imported as a string and then converted into double using "Fract/Exp String to Number". As a result, any non-numeric data within this range will also be converted into its double value.
+Reads in Excel data from *Path* in the cell range *RANGE*. Uses ActiveX methods. The data from Excel is imported as a string and then converted into double using "Fract/Exp String to Number". As a result, any non-numeric data within this range will also be converted into its double value.
 
 ### importExcel_DDE
-**INPUTS**: filename (string), row (int), column (int)
+**INPUTS**: Filename (str), ROW (int), COLUMN (int)
 
-**OUTPUTS**: data at specific cell (double)
+**OUTPUTS**: Value (dbl)
 
-Reads in data from Excel spreadsheet named *filename* at cell (*row*,*column*) using OpenDDE. The file must be open in Excel prior to running the program. The data from Excel is imported as a string and then converted into double using "Fract/Exp String to Number". As a result, any non-numeric data within this range will also be converted into its double value.
+Reads in data from Excel spreadsheet named *filename* at a specific cell at (*row*,*column*), and outputs the value at that cell. Uses OpenDDE. The file must be open in Excel prior to running the program. The data from Excel is imported as a string and then converted into double using "Fract/Exp String to Number". As a result, any non-numeric data within this range will also be converted into its double value.
 
 ### importValue
-**INPUTS**: filepath (path)
+**INPUTS**: Filepath (path)
 
-**OUTPUTS**: data (double array)
+**OUTPUTS**: Data (dbl array)
 
 Simple VI that reads in delimited data from *filepath* and outputs data in a double array. Uses LabVIEW "Read Delimited Spreadsheet." Delimiter can be changed. Type of file does not matter, but will typically be txt, csv, or tsv.
 
@@ -81,8 +91,7 @@ system_logic: decides infuse/withdraw/no action
 ## Output Components
 placeholder
 
-# Troubleshooting/Debugging: Relevant Concepts
-These concepts will hopefully point you in the right direction when something goes wrong, or if changes need to be made. 
+# Glossary
 
 ### Data Types
 **integer** (int)
