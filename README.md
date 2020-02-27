@@ -55,6 +55,15 @@ This section describes the function, inputs, and outputs for each subVI in the p
 ### front_panel
 Overall main program responsible for connecting components together and interfacing with the user. Block diagram connects sub-components.
 
+### create_log
+**INPUTS**: VISA Resource Name (VISA name), Read Value (dbl), Lower Threshold (dbl), Upper Threshold (dbl), Action (int)
+
+**OUTPUTS**: Output Array (str array)
+
+Groups the relevant data together and creates a log file for diagnostic and troubleshooting purposes. Takes in data from other portions of the program and groups them into an array, along with system date and time. Data are converted into strings. Doubles are truncated from the 3rd digit after the decimal. This array is appended to a csv file in the current directory with the filename *VISA Resource Name_log.csv* (e.x. COM1_log.csv). *Output Array* is technically unnecessary, but is currently used as a display on the front panel. The order of the output is as follows:
+
+Data, Time, Read Value, Lower Threshold, Upper Threshold, Action
+
 ### spoof_data
 **INPUTS**: No. Pumps (int)
 
