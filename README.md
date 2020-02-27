@@ -3,7 +3,7 @@
 ## Table of Contents
 * [Program Overview](#Program-Overview)
 * [Instructions](#Instructions)
-* [General Components](#genera-components)
+* [General Components](#general-components)
     * [front_panel](#front_panel)
     * [create_log](#create_log)
     * [spoof_data](#spoof_data)
