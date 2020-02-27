@@ -3,20 +3,19 @@
 ## Table of Contents
 * [Program Overview](#Program-Overview)
 * [Instructions](#Instructions)
-* [Documentation](#Documentation)
-    * [General Components](#genera-components)
-        1. [front_panel](#front_panel)
-        1. [create_log](#create_log)
-        1. [spoof_data](#spoof_data)
-        1. [spoofExcel](#spoofExcel)
-    * [Input Components](#Input-Components)
-        1. [importExcel](#importExcel)
-        1. [importExcel_DDE](#importExcel_DDE)
-        1. [importValue](#importValue)
-    * [Logic/Decision Components](#LogicDecision-Components)
-        1. [group_data](#group_data)
-        1. [system_logic](#system_logic)
-    * [Output Components](#Output-Components)
+* [General Components](#genera-components)
+    * [front_panel](#front_panel)
+    * [create_log](#create_log)
+    * [spoof_data](#spoof_data)
+    * [spoofExcel](#spoofExcel)
+* [Input Components](#Input-Components)
+    * [importExcel](#importExcel)
+    * [importExcel_DDE](#importExcel_DDE)
+    * [importValue](#importValue)
+* [Logic/Decision Components](#LogicDecision-Components)
+    * [group_data](#group_data)
+    * [system_logic](#system_logic)
+* [Output Components](#Output-Components)
 * [Glossary](#Glossary)
 
 Contact pl9ed@virginia.edu for information
@@ -50,13 +49,11 @@ If we wanted to use the program to control heartrate, for example, we would only
 
 Placeholder
 
-# Documentation
-This section describes the function, inputs, and outputs for each subVI in the program.
-## General Components
-### front_panel
+# General Components
+## front_panel
 Overall main program responsible for connecting components together and interfacing with the user. Block diagram connects sub-components.
 
-### create_log
+## create_log
 **INPUTS**: VISA Resource Name (VISA name), Read Value (dbl), Lower Threshold (dbl), Upper Threshold (dbl), Action (int)
 
 **OUTPUTS**: Output Array (str array)
@@ -65,54 +62,54 @@ Groups the relevant data together and creates a log file for diagnostic and trou
 
 Data, Time, Read Value, Lower Threshold, Upper Threshold, Action
 
-### spoof_data
+## spoof_data
 **INPUTS**: No. Pumps (int)
 
 **OUTPUTS**: Array (dbl array)
 
 Randomly generates *No. Pumps* numbers between 0 and 200 as output. Used primarily for testing.
 
-### spoofExcel
+## spoofExcel
 Standalone program that periodically writes random values into an Excel spreadsheet. Can use either the Report Generation Toolkit or write to a delimited spreadsheet and forces an Excel file extension. Used primarily for testing.
 
-## Input Components
-### importExcel
+# Input Components
+## importExcel
 **INPUTS**: Path (path), RANGE (str)
 
 **OUTPUTS**: Excel Data (dbl array)
 
 Reads in Excel data from *Path* in the cell range *RANGE*. Uses ActiveX methods. The data from Excel is imported as a string and then converted into double using "Fract/Exp String to Number". As a result, any non-numeric data within this range will also be converted into its double value.
 
-### importExcel_DDE
+## importExcel_DDE
 **INPUTS**: Filename (str), ROW (int), COLUMN (int)
 
 **OUTPUTS**: Value (dbl)
 
 Reads in data from Excel spreadsheet named *filename* at a specific cell at (*row*,*column*), and outputs the value at that cell. Uses OpenDDE. The file must be open in Excel prior to running the program. The data from Excel is imported as a string and then converted into double using "Fract/Exp String to Number". As a result, any non-numeric data within this range will also be converted into its double value.
 
-### importValue
+## importValue
 **INPUTS**: Filepath (path)
 
 **OUTPUTS**: Data (dbl array)
 
 Simple VI that reads in delimited data from *filepath* and outputs data in a double array. Uses LabVIEW "Read Delimited Spreadsheet." Delimiter can be changed. Type of file does not matter, but will typically be txt, csv, or tsv.
 
-## Logic/Decision Components
-### group_data ###
+# Logic/Decision Components
+## group_data ###
 **INPUTS**: VISA Resource Names (VISA name array), Input Values (dbl array)
 
 **OUTPUTS**: Grouped Data (cluster of arrays)
 
 Groups the input values with their corresponding VISA array. The grouping is done based on the index at *VISA Resource Names* and *Input Values*, so we need to make sure that the VISA Resources and Excel spreadsheet input range are set in the correct order. Otherwise, the pump won't be infusing/withdrawing for the correct mouse.
 
-### system_logic ###
+## system_logic ###
 **INPUTS**: Value (dbl), Upper Threshold (dbl), Lower Threshold (dbl)
 
 **OUTPUTS**: Action (int)
 
 Decides on a course of action based on numerical comparisons of *Value*, *Upper Threshold*, and *Lower Threshold*. Outputs an integer *Action* corresponding to the decision. 0: Infuse 1: Withdraw 2: No action 3: Error. *Action* values for infuse and withdraw (0/1) correspond to the ones used by NX drivers.
 
-## Output Components
+# Output Components
 placeholder
 
 # Glossary
