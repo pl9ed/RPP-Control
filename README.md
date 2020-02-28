@@ -135,7 +135,19 @@ Examples: abc, John Smith, 123!@#
 
 **boolean** (bool)
 
-True/false. Typically stored as a single bit (0: false, 1: true) and can be used with bitwise operators. In LabVIEW, these are green.
+True/false. LabVIEW stores booleans as an 8-bit value, where 0=false, and any non-zero value=true. In LabVIEW, these are green.
+
+**Array** (array)
+
+Group of similar data types.
+
+Examples: [1 0 32], [23.50 3.14159 1.00], [abc John Smith 123!@#]
+
+**Cluster** (cluster)
+
+Group of dissimilar data types. Unique to LabVIEW. Items can be grouped/ungrouped using various bundle/unbundle functions.
+
+Examples: [123 "123" "John Smith" 32.50], [2020/02/28 17:10:59 COM1 151.50]
 
 ### Links to helpful resources
 [LabVIEW Data Types](https://www.ni.com/getting-started/labview-basics/data-structures)
