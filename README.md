@@ -115,6 +115,10 @@ placeholder
 # Glossary
 
 ### Data Types
+**boolean** (bool)
+
+True/false. LabVIEW stores booleans as an 8-bit value, where 0=false, and any non-zero value=true. In LabVIEW, these are green.
+
 **integer** (int)
 
 Numerical integer values. Pretty straightforward. In LabVIEW, these are blue.
@@ -132,10 +136,6 @@ Examples: 23.50, 3.14159, 1.00
 Essentially text, or a string of characters. [LabVIEW uses ASCII encoding for strings.](https://en.wikipedia.org/wiki/ASCII) You can also have numbers and special characters, but note that the string '123' is not the same as the number 123 due to the way the different types are represented in the computer. Thus, if you try to do arithmetic directly on strings, you'll often get nonsensical results (e.x. 1+1=b). In LabVIEW, these are pink.
 
 Examples: abc, John Smith, 123!@#
-
-**boolean** (bool)
-
-True/false. LabVIEW stores booleans as an 8-bit value, where 0=false, and any non-zero value=true. In LabVIEW, these are green.
 
 **Array** (array)
 
