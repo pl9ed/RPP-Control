@@ -133,5 +133,9 @@ Essentially text, or a string of characters. [LabVIEW uses ASCII encoding for st
 
 Examples: abc, John Smith, 123!@#
 
+**boolean** (bool)
+
+True/false. Typically stored as a single bit (0: false, 1: true) and can be used with bitwise operators. In LabVIEW, these are green.
+
 ### Links to helpful resources
-[Basic Data Types](https://www.cs.uic.edu/~jbell/CourseNotes/ProgrammingConcepts/DataTypes.html)
+[LabVIEW Data Types](https://www.ni.com/getting-started/labview-basics/data-structures)
