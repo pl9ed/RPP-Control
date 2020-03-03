@@ -5,7 +5,6 @@
 * [Instructions](#Instructions)
 * [General Components](#general-components)
     * [front_panel](#front_panel)
-    * [create_log](#create_log)
     * [spoof_data](#spoof_data)
     * [spoofExcel](#spoofExcel)
 * [Input Components](#Input-Components)
@@ -16,6 +15,8 @@
     * [group_data](#group_data)
     * [system_logic](#system_logic)
 * [Output Components](#Output-Components)
+    * [pump_control](#pump_control)
+    * [create_log](#create_log)
 * [Glossary](#Glossary)
 
 Contact pl9ed@virginia.edu for information
@@ -52,15 +53,6 @@ Placeholder
 # General Components
 ## front_panel
 Overall main program responsible for connecting components together and interfacing with the user. Block diagram connects sub-components.
-
-## create_log
-**INPUTS**: VISA Resource Name (VISA name), Read Value (dbl), Lower Threshold (dbl), Upper Threshold (dbl), Action (int)
-
-**OUTPUTS**: Output Array (str array)
-
-Groups the relevant data together and creates a log file for diagnostic and troubleshooting purposes. Takes in data from other portions of the program and groups them into an array, along with system date and time. Data are converted into strings. Doubles are truncated from the 3rd digit after the decimal. This array is appended to a csv file in the current directory with the filename *VISA Resource Name_log.csv* (e.x. COM1_log.csv). *Output Array* is technically unnecessary, but is currently used as a display on the front panel. The order of the output is as follows:
-
-Data, Time, Read Value, Lower Threshold, Upper Threshold, Action
 
 ## spoof_data
 **INPUTS**: No. Pumps (int)
@@ -102,7 +94,7 @@ Simple VI that reads in delimited data from *filepath* and outputs data in a dou
 
 Groups the input values with their corresponding VISA array. The grouping is done based on the index at *VISA Resource Names* and *Input Values*, so we need to make sure that the VISA Resources and Excel spreadsheet input range are set in the correct order. Otherwise, the pump won't be infusing/withdrawing for the correct mouse.
 
-## system_logic ###
+## system_logic ##
 **INPUTS**: Value (dbl), Upper Threshold (dbl), Lower Threshold (dbl)
 
 **OUTPUTS**: Action (int)
@@ -110,7 +102,21 @@ Groups the input values with their corresponding VISA array. The grouping is don
 Decides on a course of action based on numerical comparisons of *Value*, *Upper Threshold*, and *Lower Threshold*. Outputs an integer *Action* corresponding to the decision. 0: Infuse 1: Withdraw 2: No action 3: Error. *Action* values for infuse and withdraw (0/1) correspond to the ones used by NX drivers.
 
 # Output Components
-placeholder
+## pump_control ##
+**INPUTS**: VISA Resource Name (VISA name), Syringe Inside Diameter (dbl), Dispense Volume (dbl), Flow Rate (dbl), Direction (int), Units (int)
+
+**OUTPUTS**: Pump Firmware Version (str), Volume Dispensed (str), Pump Status (bundle)
+
+Interfaces with the pump at *VISA Resource Name* to withdraw/infuse *Dispense Volume* at *Flow Rate* based on *Direction*. *Volume Dispensed* returns a string which contains both the withdrawn and infused volume. *Pump Status* is a boolean bundle that functions as an indicator for when the pump is running/stopped/etc. pump_control is functionally similar to single run example from NE library. This subVI starts with an initialization phase where the pump memory is cleared and parameters are set. This means *Volume Dispensed* is for each individual infuse/withdraw. If we want the total volume dispensed, we simply have to sum *Volume Dispensed* from the log file.
+
+## create_log
+**INPUTS**: VISA Resource Name (VISA name), Read Value (dbl), Lower Threshold (dbl), Upper Threshold (dbl), Action (int)
+
+**OUTPUTS**: Output Array (str array)
+
+Groups the relevant data together and creates a log file for diagnostic and troubleshooting purposes. Takes in data from other portions of the program and groups them into an array, along with system date and time. Data are converted into strings. Doubles are truncated from the 3rd digit after the decimal. This array is appended to a csv file in the current directory with the filename *VISA Resource Name_log.csv* (e.x. COM1_log.csv). *Output Array* is technically unnecessary, but is currently used as a display on the front panel. The order of the output is as follows:
+
+Data, Time, Read Value, Lower Threshold, Upper Threshold, Action
 
 # Glossary
 
