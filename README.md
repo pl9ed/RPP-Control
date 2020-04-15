@@ -5,7 +5,6 @@
 * [Instructions](#Instructions)
 * [General Components](#general-components)
     * [front_panel](#front_panel)
-    * [spoof_data](#spoof_data)
     * [spoofExcel](#spoofExcel)
 * [Input Components](#Input-Components)
     * [importExcel](#importExcel)
@@ -54,15 +53,8 @@ Placeholder
 ## front_panel
 Overall main program responsible for connecting components together and interfacing with the user. Block diagram connects sub-components.
 
-## spoof_data
-**INPUTS**: No. Pumps (int)
-
-**OUTPUTS**: Array (dbl array)
-
-Randomly generates *No. Pumps* numbers between 0 and 200 as output. Used primarily for testing.
-
 ## spoofExcel
-Standalone program that periodically writes random values into an Excel spreadsheet. Can use either the Report Generation Toolkit or write to a delimited spreadsheet and forces an Excel file extension. Used primarily for testing.
+Standalone program that periodically writes values into an Excel spreadsheet. Can either generate random values or output based on a CSV file. Can use either the Report Generation Toolkit or write to a delimited spreadsheet and forces an Excel file extension. Used primarily for testing.
 
 # Input Components
 ## importExcel
@@ -70,7 +62,7 @@ Standalone program that periodically writes random values into an Excel spreadsh
 
 **OUTPUTS**: Excel Data (dbl array)
 
-Reads in Excel data from *Path* in the cell range *RANGE*. Uses ActiveX methods. The data from Excel is imported as a string and then converted into double using "Fract/Exp String to Number". As a result, any non-numeric data within this range will also be converted into its double value.
+Reads in Excel data from *Path* in the cell range *RANGE*. Uses ActiveX methods. The data from Excel is imported as a string and then converted into double using "Fract/Exp String to Number". As a result, any non-numeric data within this range will also be converted into its double value. **Not used in current iteration**
 
 ## importExcel_DDE
 **INPUTS**: Filename (str), ROW (int), COLUMN (int)
@@ -84,7 +76,7 @@ Reads in data from Excel spreadsheet named *filename* at a specific cell at (*ro
 
 **OUTPUTS**: Data (dbl array)
 
-Simple VI that reads in delimited data from *filepath* and outputs data in a double array. Uses LabVIEW "Read Delimited Spreadsheet." Delimiter can be changed. Type of file does not matter, but will typically be txt, csv, or tsv.
+Simple VI that reads in delimited data from *filepath* and outputs data in a double array. Uses LabVIEW "Read Delimited Spreadsheet." Delimiter can be changed. Type of file does not matter, but will typically be txt, csv, or tsv. **Not used in current iteration**
 
 # Logic/Decision Components
 ## group_data ###
@@ -110,13 +102,13 @@ Decides on a course of action based on numerical comparisons of *Value*, *Upper 
 Interfaces with the pump at *VISA Resource Name* to withdraw/infuse *Dispense Volume* at *Flow Rate* based on *Direction*. *Volume Dispensed* returns a string which contains both the withdrawn and infused volume. *Pump Status* is a boolean bundle that functions as an indicator for when the pump is running/stopped/etc. pump_control is functionally similar to single run example from NE library. This subVI starts with an initialization phase where the pump memory is cleared and parameters are set. This means *Volume Dispensed* is for each individual infuse/withdraw. If we want the total volume dispensed, we simply have to sum *Volume Dispensed* from the log file.
 
 ## create_log
-**INPUTS**: VISA Resource Name (VISA name), Read Value (dbl), Lower Threshold (dbl), Upper Threshold (dbl), Action (int)
+**INPUTS**: VISA Resource Name (VISA name), Read Value (dbl), Lower Threshold (dbl), Upper Threshold (dbl), Action (int), Volume Dispensed (str)
 
 **OUTPUTS**: Output Array (str array)
 
 Groups the relevant data together and creates a log file for diagnostic and troubleshooting purposes. Takes in data from other portions of the program and groups them into an array, along with system date and time. Data are converted into strings. Doubles are truncated from the 3rd digit after the decimal. This array is appended to a csv file in the current directory with the filename *VISA Resource Name_log.csv* (e.x. COM1_log.csv). *Output Array* is technically unnecessary, but is currently used as a display on the front panel. The order of the output is as follows:
 
-Data, Time, Read Value, Lower Threshold, Upper Threshold, Action
+Data, Time, Read Value, Lower Threshold, Upper Threshold, Action, Vol Dispensed
 
 # Glossary
 
