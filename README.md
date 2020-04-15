@@ -50,10 +50,17 @@ If we wanted to use the program to control heartrate, for example, we would only
 Placeholder
 
 # General Components
+
 ## front_panel
+
+![front panel](images/input/front_panel.png)
+
 Overall main program responsible for connecting components together and interfacing with the user. Block diagram connects sub-components.
 
 ## spoofExcel
+
+![Excel spoofing program](images/input/spoofExcel.png)
+
 Standalone program that periodically writes values into an Excel spreadsheet. Can either generate random values or output based on a CSV file. Can use either the Report Generation Toolkit or write to a delimited spreadsheet and forces an Excel file extension. Used primarily for testing.
 
 # Input Components
@@ -65,6 +72,9 @@ Standalone program that periodically writes values into an Excel spreadsheet. Ca
 Reads in Excel data from *Path* in the cell range *RANGE*. Uses ActiveX methods. The data from Excel is imported as a string and then converted into double using "Fract/Exp String to Number". As a result, any non-numeric data within this range will also be converted into its double value. **Not used in current iteration**
 
 ## importExcel_DDE
+
+![Import Excel](images/input/importExcel_DDE.png)
+
 **INPUTS**: Filename (str), ROW (int), COLUMN (int)
 
 **OUTPUTS**: Value (dbl)
@@ -80,6 +90,9 @@ Simple VI that reads in delimited data from *filepath* and outputs data in a dou
 
 # Logic/Decision Components
 ## group_data ###
+
+![group data](images/input/group_data.png)
+
 **INPUTS**: VISA Resource Names (VISA name array), Input Values (dbl array)
 
 **OUTPUTS**: Grouped Data (cluster of arrays)
@@ -87,6 +100,9 @@ Simple VI that reads in delimited data from *filepath* and outputs data in a dou
 Groups the input values with their corresponding VISA array. The grouping is done based on the index at *VISA Resource Names* and *Input Values*, so we need to make sure that the VISA Resources and Excel spreadsheet input range are set in the correct order. Otherwise, the pump won't be infusing/withdrawing for the correct mouse.
 
 ## system_logic ##
+
+![system logic](images/input/system_logic.png)
+
 **INPUTS**: Value (dbl), Upper Threshold (dbl), Lower Threshold (dbl)
 
 **OUTPUTS**: Action (int)
@@ -95,6 +111,9 @@ Decides on a course of action based on numerical comparisons of *Value*, *Upper 
 
 # Output Components
 ## pump_control ##
+
+![pump control](images/input/pump_control.png)
+
 **INPUTS**: VISA Resource Name (VISA name), Syringe Inside Diameter (dbl), Dispense Volume (dbl), Flow Rate (dbl), Direction (int), Units (int)
 
 **OUTPUTS**: Pump Firmware Version (str), Volume Dispensed (str), Pump Status (bundle)
@@ -102,6 +121,9 @@ Decides on a course of action based on numerical comparisons of *Value*, *Upper 
 Interfaces with the pump at *VISA Resource Name* to withdraw/infuse *Dispense Volume* at *Flow Rate* based on *Direction*. *Volume Dispensed* returns a string which contains both the withdrawn and infused volume. *Pump Status* is a boolean bundle that functions as an indicator for when the pump is running/stopped/etc. pump_control is functionally similar to single run example from NE library. This subVI starts with an initialization phase where the pump memory is cleared and parameters are set. This means *Volume Dispensed* is for each individual infuse/withdraw. If we want the total volume dispensed, we simply have to sum *Volume Dispensed* from the log file.
 
 ## create_log
+
+![create log](images/input/create_log.png)
+
 **INPUTS**: VISA Resource Name (VISA name), Read Value (dbl), Lower Threshold (dbl), Upper Threshold (dbl), Action (int), Volume Dispensed (str)
 
 **OUTPUTS**: Output Array (str array)
