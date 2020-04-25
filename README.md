@@ -53,13 +53,13 @@ Placeholder
 
 ## front_panel
 
-![front panel](images/input/front_panel.png)
+![front panel](images/front_panel.png)
 
 Overall main program responsible for connecting components together and interfacing with the user. Block diagram connects sub-components.
 
 ## spoofExcel
 
-![Excel spoofing program](images/input/spoofExcel.png)
+![Excel spoofing program](images/spoofExcel.png)
 
 Standalone program that periodically writes values into an Excel spreadsheet. Can either generate random values or output based on a CSV file. Can use either the Report Generation Toolkit or write to a delimited spreadsheet and forces an Excel file extension. Used primarily for testing.
 
@@ -73,7 +73,7 @@ Reads in Excel data from *Path* in the cell range *RANGE*. Uses ActiveX methods.
 
 ## importExcel_DDE
 
-![Import Excel](images/input/importExcel_DDE.png)
+![Import Excel](images/importExcel_DDE.png)
 
 **INPUTS**: Filename (str), ROW (int), COLUMN (int)
 
@@ -91,7 +91,7 @@ Simple VI that reads in delimited data from *filepath* and outputs data in a dou
 # Logic/Decision Components
 ## group_data ###
 
-![group data](images/input/group_data.png)
+![group data](images/group_data.png)
 
 **INPUTS**: VISA Resource Names (VISA name array), Input Values (dbl array)
 
@@ -101,7 +101,7 @@ Groups the input values with their corresponding VISA array. The grouping is don
 
 ## system_logic ##
 
-![system logic](images/input/system_logic.png)
+![system logic](images/system_logic.png)
 
 **INPUTS**: Value (dbl), Upper Threshold (dbl), Lower Threshold (dbl)
 
@@ -112,7 +112,7 @@ Decides on a course of action based on numerical comparisons of *Value*, *Upper 
 # Output Components
 ## pump_control ##
 
-![pump control](images/input/pump_control.png)
+![pump control](images/pump_control.png)
 
 **INPUTS**: VISA Resource Name (VISA name), Syringe Inside Diameter (dbl), Dispense Volume (dbl), Flow Rate (dbl), Direction (int), Units (int)
 
@@ -122,7 +122,7 @@ Interfaces with the pump at *VISA Resource Name* to withdraw/infuse *Dispense Vo
 
 ## create_log
 
-![create log](images/input/create_log.png)
+![create log](images/create_log.png)
 
 **INPUTS**: VISA Resource Name (VISA name), Read Value (dbl), Lower Threshold (dbl), Upper Threshold (dbl), Action (int), Volume Dispensed (str)
 
