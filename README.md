@@ -2,7 +2,6 @@
 
 ## Table of Contents
 * [Program Overview](#Program-Overview)
-* [Instructions](#Instructions)
 * [General Components](#general-components)
     * [front_panel](#front_panel)
     * [spoofExcel](#spoofExcel)
@@ -44,10 +43,6 @@ Our 3 components:
 ![specific components](https://github.com/pl9ed/RPP-Control/blob/master/rppcomponents.png?raw=true)
 
 If we wanted to use the program to control heartrate, for example, we would only need to change the output component to match whatever we're using to increase or decrease heart rate. The numerical values for the other components (input and thresholds, for example) might change, but the program itself would not.
-
-# Instructions
-
-Placeholder
 
 # General Components
 
